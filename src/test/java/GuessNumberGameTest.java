@@ -32,10 +32,9 @@ public class GuessNumberGameTest {
 
         // when:
         game.start();
-        game.guess(answers);
 
         // then:
-        assert "4A0B".equals(game.getResult());
+        assert "4A0B".equals(game.guess(answers));
 
     }
 
@@ -50,10 +49,9 @@ public class GuessNumberGameTest {
 
         // when:
         game.start();
-        game.guess(guessNumbers);
 
         // then:
-        assert "0A0B".equals(game.getResult());
+        assert "0A0B".equals(game.guess(guessNumbers));
 
     }
 
@@ -68,10 +66,9 @@ public class GuessNumberGameTest {
 
         // when:
         game.start();
-        game.guess(guessNumbers);
 
         // then:
-        assert "1A0B".equals(game.getResult());
+        assert "1A0B".equals(game.guess(guessNumbers));
 
     }
 
@@ -86,10 +83,26 @@ public class GuessNumberGameTest {
 
         // when:
         game.start();
-        game.guess(guessNumbers);
 
         // then:
-        assert "1A2B".equals(game.getResult());
+        assert "1A2B".equals(game.guess(guessNumbers));
+
+    }
+
+    @Test
+    public void should_return_Wrong_Input_input_again_given_duplicated_numbers() {
+        // given:
+        int[] answers = new int[] {1, 2, 3, 4};
+        int[] guessNumbers = new int[] {1, 3, 4, 8};
+        NumberGenerator generator = Mockito.mock(NumberGenerator.class);
+        Mockito.when(generator.getNumbers()).thenReturn(answers);
+        GuessNumberGame game = new GuessNumberGame(generator);
+
+        // when:
+        game.start();
+
+        // then:
+        assert "1A2B".equals(game.guess(guessNumbers));
 
     }
 }
