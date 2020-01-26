@@ -3,13 +3,15 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
+import org.mockito.*;
 
 public class GuessNumberGameTest {
 
     @Test
     public void should_return_4_different_numbers_when_generate_answer() {
         // given:
-        GuessNumberGame game = new GuessNumberGame();
+        NumberGenerator generator = new NumberGenerator();
+        GuessNumberGame game = new GuessNumberGame(generator);
 
         // when:
         game.start();
@@ -23,13 +25,17 @@ public class GuessNumberGameTest {
     @Test
     public void should_return_4A0B_given_all_correct_answers() {
         // given:
-        GuessNumberGame game = new GuessNumberGame();
+        int[] answers = new int[] {1, 2, 3, 4};
+        NumberGenerator generator = Mockito.mock(NumberGenerator.class);
+        Mockito.when(generator.getNumbers()).thenReturn(answers);
+        GuessNumberGame game = new GuessNumberGame(generator);
 
         // when:
         game.start();
+        game.guess(answers);
 
         // then:
-        int[] answers = game.getAnswers();
+        assert "4A0B".equals(game.getResult());
 
     }
 }
