@@ -122,4 +122,26 @@ public class GuessNumberGameTest {
         assert "Wrong Input, input again".equals(game.guess(guessNumbers));
 
     }
+
+    @Test
+    public void should_return_Game_Over_given_wrong_answers_6_times() {
+        // given:
+        int[] answers = new int[] {1, 2, 3, 4};
+        int[] guessNumbers = new int[] {5, 6, 7, 8};
+        NumberGenerator generator = Mockito.mock(NumberGenerator.class);
+        Mockito.when(generator.getNumbers()).thenReturn(answers);
+        GuessNumberGame game = new GuessNumberGame(generator);
+
+        // when:
+        game.start();
+
+        // then:
+        assert "0A0B".equals(game.guess(guessNumbers));
+        assert "0A0B".equals(game.guess(guessNumbers));
+        assert "0A0B".equals(game.guess(guessNumbers));
+        assert "0A0B".equals(game.guess(guessNumbers));
+        assert "0A0B".equals(game.guess(guessNumbers));
+        assert "Game Over".equals(game.guess(guessNumbers));
+
+    }
 }

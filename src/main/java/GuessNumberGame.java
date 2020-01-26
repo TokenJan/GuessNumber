@@ -6,19 +6,30 @@ import java.util.Arrays;
 public class GuessNumberGame {
 
     private int[] answers;
+    private int tries;
     private NumberGenerator generator;
     private static final String WRONG_MESSAGE = "Wrong Input, input again";
+    private static final String GAME_OVER = "Game Over";
+    private static final int MAX_TRIES = 6;
 
     public GuessNumberGame(NumberGenerator generator) {
         this.generator = generator;
     }
 
     public void start() {
+        this.tries = 0;
         this.answers = generator.getNumbers();
     }
 
     public String guess(int[] guessNumbers) {
-        return getResult(guessNumbers);
+        String result = getResult(guessNumbers);
+        if (!"4A0B".equals(result)) {
+            tries ++;
+        }
+        if (tries == MAX_TRIES) {
+            return GAME_OVER;
+        }
+        return result;
     }
 
     private String getResult(int[] guessNumbers) {
