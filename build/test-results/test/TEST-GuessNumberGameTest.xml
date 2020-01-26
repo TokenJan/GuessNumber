@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GuessNumberGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-26T04:38:05" hostname="CNjiahuan.yang" time="0.092">
+<testsuite name="GuessNumberGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-26T04:40:06" hostname="CNjiahuan.yang" time="0.096">
   <properties/>
-  <testcase name="should_return_0A0B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.092"/>
+  <testcase name="should_return_1A2B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.096"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

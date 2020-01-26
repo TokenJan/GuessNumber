@@ -56,4 +56,40 @@ public class GuessNumberGameTest {
         assert "0A0B".equals(game.getResult());
 
     }
+
+    @Test
+    public void should_return_1A3B_given_all_wrong_answers() {
+        // given:
+        int[] answers = new int[] {1, 2, 3, 4};
+        int[] guessNumbers = new int[] {1, 6, 7, 8};
+        NumberGenerator generator = Mockito.mock(NumberGenerator.class);
+        Mockito.when(generator.getNumbers()).thenReturn(answers);
+        GuessNumberGame game = new GuessNumberGame(generator);
+
+        // when:
+        game.start();
+        game.guess(guessNumbers);
+
+        // then:
+        assert "1A0B".equals(game.getResult());
+
+    }
+
+    @Test
+    public void should_return_1A2B_given_all_wrong_answers() {
+        // given:
+        int[] answers = new int[] {1, 2, 3, 4};
+        int[] guessNumbers = new int[] {1, 3, 4, 8};
+        NumberGenerator generator = Mockito.mock(NumberGenerator.class);
+        Mockito.when(generator.getNumbers()).thenReturn(answers);
+        GuessNumberGame game = new GuessNumberGame(generator);
+
+        // when:
+        game.start();
+        game.guess(guessNumbers);
+
+        // then:
+        assert "1A2B".equals(game.getResult());
+
+    }
 }
