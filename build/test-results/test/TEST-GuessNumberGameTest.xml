@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GuessNumberGameTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-01-26T04:46:58" hostname="CNjiahuan.yang" time="0.17">
+<testsuite name="GuessNumberGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-26T07:07:05" hostname="CNjiahuan.yang" time="0.173">
   <properties/>
-  <testcase name="should_return_1A3B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.161"/>
-  <testcase name="should_return_0A0B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.0"/>
-  <testcase name="should_return_4A0B_given_all_correct_answers" classname="GuessNumberGameTest" time="0.001"/>
-  <testcase name="should_return_4_different_numbers_when_generate_answer" classname="GuessNumberGameTest" time="0.006"/>
-  <testcase name="should_return_Wrong_Input_input_again_given_duplicated_numbers" classname="GuessNumberGameTest" time="0.001"/>
-  <testcase name="should_return_1A2B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.0"/>
+  <testcase name="should_return_Wrong_Input_input_again_given_2_numbers" classname="GuessNumberGameTest" time="0.173"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

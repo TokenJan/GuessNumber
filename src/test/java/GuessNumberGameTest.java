@@ -93,7 +93,7 @@ public class GuessNumberGameTest {
     public void should_return_Wrong_Input_input_again_given_duplicated_numbers() {
         // given:
         int[] answers = new int[] {1, 2, 3, 4};
-        int[] guessNumbers = new int[] {1, 3, 4, 8};
+        int[] guessNumbers = new int[] {1, 1, 2, 3};
         NumberGenerator generator = Mockito.mock(NumberGenerator.class);
         Mockito.when(generator.getNumbers()).thenReturn(answers);
         GuessNumberGame game = new GuessNumberGame(generator);
@@ -102,7 +102,24 @@ public class GuessNumberGameTest {
         game.start();
 
         // then:
-        assert "1A2B".equals(game.guess(guessNumbers));
+        assert "Wrong Input, input again".equals(game.guess(guessNumbers));
+
+    }
+
+    @Test
+    public void should_return_Wrong_Input_input_again_given_2_numbers() {
+        // given:
+        int[] answers = new int[] {1, 2, 3, 4};
+        int[] guessNumbers = new int[] {1, 2};
+        NumberGenerator generator = Mockito.mock(NumberGenerator.class);
+        Mockito.when(generator.getNumbers()).thenReturn(answers);
+        GuessNumberGame game = new GuessNumberGame(generator);
+
+        // when:
+        game.start();
+
+        // then:
+        assert "Wrong Input, input again".equals(game.guess(guessNumbers));
 
     }
 }

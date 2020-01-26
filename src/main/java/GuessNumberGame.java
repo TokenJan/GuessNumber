@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class GuessNumberGame {
 
     private int[] answers;
-    private int[] guessNumbers;
     private NumberGenerator generator;
+    private static final String WRONG_MESSAGE = "Wrong Input, input again";
 
     public GuessNumberGame(NumberGenerator generator) {
         this.generator = generator;
@@ -17,12 +17,15 @@ public class GuessNumberGame {
         this.answers = generator.getNumbers();
     }
 
-    public String guess(int[] guessNums) {
-        this.guessNumbers = guessNums;
-        return getResult();
+    public String guess(int[] guessNumbers) {
+        return getResult(guessNumbers);
     }
 
-    private String getResult() {
+    private String getResult(int[] guessNumbers) {
+        if (verifyInput(guessNumbers)) {
+            return WRONG_MESSAGE;
+        }
+
         int countA = 0;
         int countB = 0;
         for (int i = 0 ; i < answers.length; i++) {
@@ -35,6 +38,11 @@ public class GuessNumberGame {
         }
         return String.format("%dA%dB", countA, countB);
     }
+
+    private boolean verifyInput(int[] guessNumbers) {
+        return Arrays.stream(guessNumbers).distinct().count() != 4;
+    }
+
 
     public int[] getAnswers() {
         return answers;
