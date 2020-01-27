@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GuessNumberGameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-26T07:27:29" hostname="CNjiahuan.yang" time="0.252">
+<testsuite name="GuessNumberGameTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2020-01-27T12:22:14" hostname="CNjiahuan.yang" time="0.108">
   <properties/>
-  <testcase name="should_return_Game_Over_given_wrong_answers_6_times" classname="GuessNumberGameTest" time="0.252"/>
+  <testcase name="should_return_1A3B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.103"/>
+  <testcase name="should_return_0A0B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.0"/>
+  <testcase name="should_return_Wrong_Input_input_again_given_2_numbers" classname="GuessNumberGameTest" time="0.001"/>
+  <testcase name="should_return_4A0B_given_all_correct_answers" classname="GuessNumberGameTest" time="0.0"/>
+  <testcase name="should_return_Game_Over_given_wrong_answers_6_times" classname="GuessNumberGameTest" time="0.001"/>
+  <testcase name="should_return_4_different_numbers_when_generate_answer" classname="GuessNumberGameTest" time="0.002"/>
+  <testcase name="should_return_Wrong_Input_input_again_given_duplicated_numbers" classname="GuessNumberGameTest" time="0.0"/>
+  <testcase name="should_return_1A2B_given_all_wrong_answers" classname="GuessNumberGameTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
